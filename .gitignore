@@ -1,0 +1,15 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# SQLite database
+rice.db
+rice.db-*
+
+# Go binary
+rice
+
+# IDE
+.vscode/
+.idea/

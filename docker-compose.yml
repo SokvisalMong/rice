@@ -1,0 +1,15 @@
+services:
+  rice-bot:
+    build: .
+    container_name: rice-bot
+    restart: unless-stopped
+    environment:
+      DISCORD_TOKEN: ${DISCORD_TOKEN:?DISCORD_TOKEN must be set}
+      GGDEALS_API_KEY: ${GGDEALS_API_KEY:?GGDEALS_API_KEY must be set}
+      TEST_GUILD_ID: ${TEST_GUILD_ID:-}
+      DATABASE_PATH: /data/rice.db
+    volumes:
+      - rice-data:/data
+
+volumes:
+  rice-data:
